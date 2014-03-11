@@ -2,9 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0528d8d4-209d-40e3-b122-193e2c575158" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/dictionaries/kolan.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mcp3004pcreceiver.py" afterPath="$PROJECT_DIR$/mcp3004pcreceiver.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mcp3004rpisender.py" afterPath="$PROJECT_DIR$/mcp3004rpisender.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="mcp3004udp.iws" />
@@ -42,7 +39,7 @@
       <file leaf-file-name="mcp3004rpisender.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/mcp3004rpisender.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="57" column="0" selection-start="1603" selection-end="1603" vertical-scroll-proportion="1.2707641" vertical-offset="0" max-vertical-offset="855">
+            <state line="22" column="59" selection-start="481" selection-end="481" vertical-scroll-proportion="0.3986711" vertical-offset="0" max-vertical-offset="855">
               <folding />
             </state>
           </provider>
@@ -311,12 +308,18 @@
       <created>1394489559234</created>
       <updated>1394489559234</updated>
     </task>
+    <task id="LOCAL-00001" summary="RPi sends 12000 samples. Receiver receives the samples in  chunks of 10 and plots 4000 samples on one plot. After that the numpy array is emptied and the plot begins from 0. This procedure repeats 3 times. After sending the 12000 samples the receiver fires a timeout after 5 seconds of UDP inactivity and closes the socket.">
+      <created>1394581961756</created>
+      <updated>1394581961756</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="-1" y="0" width="1368" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3290938" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -348,6 +351,8 @@
     <option name="myTodoPanelSettings">
       <TodoPanelSettings />
     </option>
+    <MESSAGE value="RPi sends 12000 samples. Receiver receives the samples in  chunks of 10 and plots 4000 samples on one plot. After that the numpy array is emptied and the plot begins from 0. This procedure repeats 3 times. After sending the 12000 samples the receiver fires a timeout after 5 seconds of UDP inactivity and closes the socket." />
+    <option name="LAST_COMMIT_MESSAGE" value="RPi sends 12000 samples. Receiver receives the samples in  chunks of 10 and plots 4000 samples on one plot. After that the numpy array is emptied and the plot begins from 0. This procedure repeats 3 times. After sending the 12000 samples the receiver fires a timeout after 5 seconds of UDP inactivity and closes the socket." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -405,7 +410,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/mcp3004rpisender.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="57" column="0" selection-start="1603" selection-end="1603" vertical-scroll-proportion="1.2707641" vertical-offset="0" max-vertical-offset="855">
+        <state line="22" column="59" selection-start="481" selection-end="481" vertical-scroll-proportion="0.3986711" vertical-offset="0" max-vertical-offset="855">
           <folding />
         </state>
       </provider>
