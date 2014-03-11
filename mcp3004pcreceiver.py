@@ -8,6 +8,7 @@ PORT = 5000
 
 localSocket = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
 localSocket.bind((HOST, PORT))
+localSocket.settimeout(5)
 
 dataADC = []
 maxADCBits = 1023.0
@@ -29,13 +30,32 @@ qtplot.setLabel('left', "Measured voltage [V]")
 qtplot.setLabel('bottom', "Number of sample")
 qtplot.showGrid(x=True, y=True)
 
-def update():
-    global curve
+counter = 0
 
-    for i in range(10):                                             #grab ADC data in 10 samples chunks
-        dataADC.append(float(localSocket.recv(50))*voltsPerBit)     #converts the received data to voltage and appends the data to array
-    dataNumpy = np.asarray(dataADC)                                 #converts dataADC to numpy array
+
+def update():
+    global curve, counter, dataNumpy, dataADC
+
+    for i in range(10):                                             # grab ADC data in 10 samples chunks
+        try:
+            dataReceived = float(localSocket.recv(50))*voltsPerBit  # converts the received data to voltage
+            dataADC.append(dataReceived)                            # and appends the data to array
+        except socket.timeout:
+            print "Socket timeout!"
+            localSocket.close()
+            print "Socket closed"
+            timer.stop()
+            print "Qt timer stopped"
+        except socket.error:
+            print "Socket error"
+
+    dataNumpy = np.array(dataADC)                               # converts dataADC to numpy array required by pyqtgraph
     curve.setData(dataNumpy)
+    counter += 1
+    if counter == 400:
+        dataADC = []                                            # empties the array after 4000 samples
+        dataNumpy = np.array(dataADC)
+        counter = 0
 
 timer = QtCore.QTimer()
 timer.timeout.connect(update)
